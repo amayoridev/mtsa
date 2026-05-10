@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án máy tạo sóng âm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex items-center justify-center px-4">
+  <main class="w-full max-w-xl rounded-3xl border border-white/10 bg-zinc-900/90 p-8 shadow-2xl shadow-violet-500/10 backdrop-blur-md">
+    <div class="space-y-6">
+      <div>
+        <p class="text-xs uppercase tracking-[0.35em] text-zinc-500">dự án máy tạo sóng âm</p>
+        <h1 class="mt-3 text-3xl font-semibold tracking-tight">Tạo sóng âm theo tần số</h1>
+      </div>
+
+      <div class="space-y-4">
+        <div class="space-y-2">
+          <label class="block text-sm text-zinc-400" for="frequencySlider">Tần số hiện tại</label>
+          <div class="text-2xl font-semibold"><span id="frequencyValue">440</span> Hz</div>
+        </div>
+
+        <input id="frequencySlider" type="range" min="0.1" max="20000" step="0.1" value="440" class="w-full accent-violet-400" />
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-sm text-zinc-400" for="frequencyInput">Nhập tần số mong muốn (Hz)</label>
+        <input id="frequencyInput" type="number" min="0.1" max="20000" step="0.1" value="440" class="w-full rounded-2xl border border-zinc-700 bg-zinc-950/80 px-4 py-3 text-base text-zinc-100 outline-none transition focus:border-violet-400 focus:ring-2 focus:ring-violet-500/20" />
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2">
+        <button id="playButton" class="rounded-2xl bg-violet-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-violet-400">Phát âm thanh</button>
+        <button id="stopButton" disabled class="rounded-2xl border border-zinc-700 bg-zinc-950/80 px-4 py-3 text-sm font-semibold text-zinc-300 transition disabled:cursor-not-allowed disabled:opacity-40">Ngừng phát</button>
+      </div>
+
+      <p class="text-sm leading-6 text-zinc-500">Phạm vi tần số: <strong class="text-zinc-100">0.1 Hz</strong> đến <strong class="text-zinc-100">20 000 Hz</strong>. Một số trình duyệt có thể không phát được tần số rất thấp.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
